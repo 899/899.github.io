@@ -11,7 +11,8 @@
 <meta property="og:image">
 <meta content="搬运工" property="og:site_name">
 <meta content="修改主机名:  偏好设置 -&gt; 共享
-终端下名称显示:  在用户目录下的.bash_profile添加或修改, 不存在创建就可以了. 在里面添加对应的环境变量就可以了.  PS1=&quot;[\u@\h \W]\$&quot;" property="og:description">
+终端下名称显示:  在用户目录下的.bash_profile添加或修改, 不存在创建就可以了. 在里面添加对应的环境变量就可以了.  PS1=&quot;[\u@\h \W]\$&quot;
+查找文件神器:  ctrl+space快捷键呼出spotlight. 简直是无以伦比, 而且速度快到不行, 除了第一次建立索引的时候比较耗时, 接下来都是增量索引" property="og:description">
 <meta content="summary" name="twitter:card">
   
     <link rel="alternative" href="/atom.xml" title="搬运工" type="application/atom+xml">
@@ -87,12 +88,39 @@
         <ul>
 <li>修改主机名:<br>  <code>偏好设置 -&gt; 共享</code></li>
 <li>终端下名称显示:<br>  在用户目录下的<strong>.bash_profile</strong>添加或修改, 不存在创建就可以了. 在里面添加对应的环境变量就可以了.<br>  <code>PS1=&quot;[\u@\h \W]\$&quot;</code></li>
+<li>查找文件神器:<br>  <code>ctrl+space</code>快捷键呼出spotlight. 简直是无以伦比, 而且速度快到不行, 除了第一次建立索引的时候比较耗时, 接下来都是增量索引, 用户几乎无法察觉.<br>  重建索引方法:</li>
 </ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre>    sudo mdutil <span class="attribute">-i</span> off
+    <span class="comment">//关闭索引</span>
+    sudo mdutil <span class="attribute">-E</span> <span class="subst">/</span>
+    <span class="comment">//删除索引</span>
+    sudo mditil <span class="attribute">-i</span> <span class="keyword">on</span>
+    <span class="comment">//开启索引</span>
+</pre></td></tr></table></figure>
+
+
+<ul>
+<li>finder里为某些文件或者文件夹标记标签tags, 太方便啦. 据说只能50个, 不然会很慢.</li>
+<li>关于卸载程序, 只需要将<code>Application</code>里的app删掉就可以了. 对于有洁癖的童鞋, 可以自己下载cleanapp, 它可以帮你找到所有与app有关的文件, 在一并删除即可.</li>
+<li>基本不需要安装杀毒软件, 只需要定期进行磁盘工具进行验证和修复磁盘权限即可.<br>日常维护脚本命令: <code>sudo periodic daily weekly monthly</code></li>
+<li>批量处理图片命令<code>sips</code>, 可通过<code>sips -h</code>查看具体功能.</li>
+<li>终端下输入<code>open</code>命令, 自动打开对应的文件, 不过是用默认的app打开.</li>
+<li>如果想要只要某个程序(自测程序)运行多久, 可使用<code>time</code>.</li>
+<li>mac有一个非常方便的功能, 在finder或桌面上, 选中一个文件并按空格, 可实现预览.</li>
+<li>在使用safari的时候, 如果不小心关掉了一个网页, 可通过<code>ctrl+z</code>来恢复关掉的最后一个网页.</li>
+</ul>
+<p>有机会在补充了.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.junedream.com/2014/05/17/mac一些小知识/" data-id="dxpai9fa3jbi1bue" class="article-share-link">Share</a>
+      <a data-url="http://blog.junedream.com/2014/05/17/mac一些小知识/" data-id="aivbiursdmhxx0ii" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mac/">mac</a></li></ul>
