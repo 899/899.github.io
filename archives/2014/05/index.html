@@ -85,13 +85,29 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>由于开发环境是mac, 所以这边只需要安装node, 无需安装git, 其他系统环境的, 需自行安装git和node.<br>hexo官方doc: <a href="http://hexo.io/docs/index.html" target="_blank">http://hexo.io/docs/index.html</a>. 官方的文档很齐全, 在这里简要的小记, 莫怪.</p>
+<p>安装node<br><code>brew install node</code></p>
+<p>安装成功后, 安装hexo.<br><code>npm install -g hexo</code><br>现在我们开始使用hexo创建项目test.<br><code>hexo init test</code><br>创建文件以hello word为标题的文件.<br><code>hexo new &#39;hello word&#39;</code><br>到项目目录下的source/_posts下找到对应的文件进行修改内容.<br>自动生成对应的文件.<br><code>hexo generate</code><br>启动服务.<br><code>hexo server</code></p>
+<p>上传到github上, 需要在个人的github上创建自己对应的repository(username.github.io).<br>编辑项目根目录下的_config.yml. 在末尾出添加</p>
+<figure class="highlight deploy:"><table><tr><td class="gutter"><pre>1
+2
+3
+</pre></td><td class="code"><pre>  <span class="attribute">type</span>: <span class="string">github</span>
+  <span class="attribute">repository</span>: <span class="string">https://github.com/username/username.github.io.git</span>
+  <span class="attribute">branch</span>: <span class="string">master</span>
+</pre></td></tr></table></figure>
+
+
+<p>然后执行<code>hexo deploy</code>即可.</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.junedream.com/2014/05/17/在github上安装hexo/" data-id="i5kmivmpgmtpx92f" class="article-share-link">Share</a>
+      <a data-url="http://blog.junedream.com/2014/05/17/在github上安装hexo/" data-id="uf88rmdu5guum13c" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+
     </footer>
   </div>
   
@@ -129,7 +145,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.junedream.com/2014/05/17/mac一些小知识/" data-id="xdjz5vwrm4q8asyv" class="article-share-link">Share</a>
+      <a data-url="http://blog.junedream.com/2014/05/17/mac一些小知识/" data-id="dxpai9fa3jbi1bue" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mac/">mac</a></li></ul>
@@ -178,7 +194,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.junedream.com/2014/05/17/入手rmbp/" data-id="xqlfeg7wsjicyhj8" class="article-share-link">Share</a>
+      <a data-url="http://blog.junedream.com/2014/05/17/入手rmbp/" data-id="nt46ay9z4uslbmyf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mac/">mac</a></li></ul>
@@ -201,7 +217,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/">mac</a><span class="tag-list-count">2</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/">mac</a><span class="tag-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -210,7 +226,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/mac/" style="font-size: NaNpx;">mac</a>
+      <a href="/tags/hexo/" style="font-size: 10.00px;">hexo</a><a href="/tags/mac/" style="font-size: 20.00px;">mac</a>
     </div>
   </div>
 
