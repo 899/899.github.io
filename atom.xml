@@ -3,9 +3,9 @@
   <title><![CDATA[六月的梦]]></title>
   <subtitle><![CDATA[Time flies when we're having fun​.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
-  <link href="http://blog.junedream.com/"/>
-  <updated>2014-05-23T20:29:09.119Z</updated>
-  <id>http://blog.junedream.com/</id>
+  <link href="http://junedream.com/"/>
+  <updated>2014-05-23T20:30:32.431Z</updated>
+  <id>http://junedream.com/</id>
   
   <author>
     <name><![CDATA[June]]></name>
@@ -16,8 +16,8 @@
   
   <entry>
     <title><![CDATA[在github上安装hexo]]></title>
-    <link href="http://blog.junedream.com/2014/05/17/%E5%9C%A8github%E4%B8%8A%E5%AE%89%E8%A3%85hexo/"/>
-    <id>http://blog.junedream.com/2014/05/17/在github上安装hexo/</id>
+    <link href="http://junedream.com/2014/05/17/%E5%9C%A8github%E4%B8%8A%E5%AE%89%E8%A3%85hexo/"/>
+    <id>http://junedream.com/2014/05/17/在github上安装hexo/</id>
     <published>2014-05-17T13:26:54.000Z</published>
     <updated>2014-05-18T03:30:27.000Z</updated>
     <content type="html"><![CDATA[<p>由于开发环境是mac, 所以这边只需要安装node, 无需安装git, 其他系统环境的, 需自行安装git和node.<br>hexo官方doc: <a href="http://hexo.io/docs/index.html" target="_blank">http://hexo.io/docs/index.html</a>. 官方的文档很齐全, 在这里简要的小记, 莫怪.</p>
@@ -37,14 +37,14 @@
 ]]></content>
     
     
-      <category term="hexo" scheme="http://blog.junedream.com/tags/hexo/"/>
+      <category term="hexo" scheme="http://junedream.com/tags/hexo/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[mac一些小知识]]></title>
-    <link href="http://blog.junedream.com/2014/05/17/mac%E4%B8%80%E4%BA%9B%E5%B0%8F%E7%9F%A5%E8%AF%86/"/>
-    <id>http://blog.junedream.com/2014/05/17/mac一些小知识/</id>
+    <link href="http://junedream.com/2014/05/17/mac%E4%B8%80%E4%BA%9B%E5%B0%8F%E7%9F%A5%E8%AF%86/"/>
+    <id>http://junedream.com/2014/05/17/mac一些小知识/</id>
     <published>2014-05-17T07:53:51.000Z</published>
     <updated>2014-05-18T10:49:26.000Z</updated>
     <content type="html"><![CDATA[<ul>
@@ -81,14 +81,14 @@
 ]]></content>
     
     
-      <category term="mac" scheme="http://blog.junedream.com/tags/mac/"/>
+      <category term="mac" scheme="http://junedream.com/tags/mac/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[入手rmbp]]></title>
-    <link href="http://blog.junedream.com/2014/05/17/%E5%85%A5%E6%89%8Brmbp/"/>
-    <id>http://blog.junedream.com/2014/05/17/入手rmbp/</id>
+    <link href="http://junedream.com/2014/05/17/%E5%85%A5%E6%89%8Brmbp/"/>
+    <id>http://junedream.com/2014/05/17/入手rmbp/</id>
     <published>2014-05-17T07:15:56.000Z</published>
     <updated>2014-05-18T10:03:18.000Z</updated>
     <content type="html"><![CDATA[<p>入手了rmbp, 发现这是一件很正确的事情. 首先主要很多软件不用自己重新安装, 都已经自带, 而且屏幕看起来也非常的舒服,至少高清屏可以保护眼睛. 简单的介绍下自己安装比较常用的app.</p>
@@ -106,7 +106,7 @@
 ]]></content>
     
     
-      <category term="mac" scheme="http://blog.junedream.com/tags/mac/"/>
+      <category term="mac" scheme="http://junedream.com/tags/mac/"/>
     
   </entry>
   
