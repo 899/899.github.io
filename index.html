@@ -63,6 +63,108 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-mac自启动服务" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/06/15/mac自启动服务/" class="article-date">
+  <time datetime="2014-06-15T11:47:24.000Z" itemprop="datePublished">6月 15 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/06/15/mac自启动服务/">mac自启动服务</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>关于mac下服务自启动, 可以在<code>/Library/LaunchDaemons</code>下添加对应的xml配置, 如mysql</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="code"><pre><span class="pi">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="doctype">&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;</span>
+<span class="tag">&lt;<span class="title">plist</span> <span class="attribute">version</span>=<span class="value">"1.0"</span>&gt;</span>
+<span class="tag">&lt;<span class="title">dict</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">key</span>&gt;</span>KeepAlive<span class="tag">&lt;/<span class="title">key</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">true</span>/&gt;</span>
+    <span class="tag">&lt;<span class="title">key</span>&gt;</span>Label<span class="tag">&lt;/<span class="title">key</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">string</span>&gt;</span>com.mysql.mysqld<span class="tag">&lt;/<span class="title">string</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">key</span>&gt;</span>Program<span class="tag">&lt;/<span class="title">key</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">string</span>&gt;</span>/usr/local/mysql/bin/mysqld_safe<span class="tag">&lt;/<span class="title">string</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">key</span>&gt;</span>RunAtLoad<span class="tag">&lt;/<span class="title">key</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">true</span>/&gt;</span>
+    <span class="tag">&lt;<span class="title">key</span>&gt;</span>UserName<span class="tag">&lt;/<span class="title">key</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">string</span>&gt;</span>mysql<span class="tag">&lt;/<span class="title">string</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">key</span>&gt;</span>WorkingDirectory<span class="tag">&lt;/<span class="title">key</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">string</span>&gt;</span>/usr/local/mysql<span class="tag">&lt;/<span class="title">string</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">dict</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">plist</span>&gt;</span>
+</pre></td></tr></table></figure>
+
+
+<p>然后在运行</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+</pre></td><td class="code"><pre>sudo mv ~/Desktop/<span class="keyword">com</span><span class="preprocessor">.mysql</span><span class="preprocessor">.mysqld</span><span class="preprocessor">.plist</span> /Library/LaunchDaemons
+sudo chown root /Library/LaunchDaemons/<span class="keyword">com</span><span class="preprocessor">.mysql</span><span class="preprocessor">.mysqld</span><span class="preprocessor">.plist</span>
+sudo launchctl load -w /Library/LaunchDaemons/<span class="keyword">com</span><span class="preprocessor">.mysql</span><span class="preprocessor">.mysqld</span><span class="preprocessor">.plist</span>
+</pre></td></tr></table></figure>
+
+
+<p>或者采用<code>/Library/LaunchAgents</code>下运行</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="keyword">cp</span> `brew --prefix mysql`/<span class="keyword">com</span><span class="preprocessor">.mysql</span><span class="preprocessor">.mysqld</span><span class="preprocessor">.plist</span> ~/Library/LaunchAgents/
+sudo launchctl load -w ~/Library/LaunchAgents/<span class="keyword">com</span><span class="preprocessor">.mysql</span><span class="preprocessor">.mysqld</span><span class="preprocessor">.plist</span>
+</pre></td></tr></table></figure>
+
+
+<p>最简单的方式就是通过<code>homebrew</code>查看, <code>brew info mysql</code>获得其自启动命令</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="built_in">ln</span> -sfv /usr/<span class="built_in">local</span>/opt/mysql<span class="comment">/*.plist ~/Library/LaunchAgents</span>
+</pre></td></tr></table></figure>
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://junedream.com/2014/06/15/mac自启动服务/" data-id="oq63qyunibk00ggz" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mac mysql/">mac mysql</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-在github上安装hexo" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/05/17/在github上安装hexo/" class="article-date">
@@ -103,7 +205,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://junedream.com/2014/05/17/在github上安装hexo/" data-id="9yz1ekesc9k8rsvh" class="article-share-link">Share</a>
+      <a data-url="http://junedream.com/2014/05/17/在github上安装hexo/" data-id="rf30dsaokfnfvieg" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
@@ -172,7 +274,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://junedream.com/2014/05/17/mac一些小知识/" data-id="cgawd2wfi0qokycb" class="article-share-link">Share</a>
+      <a data-url="http://junedream.com/2014/05/17/mac一些小知识/" data-id="lvefhqdtjtltnn6w" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mac/">mac</a></li></ul>
@@ -222,7 +324,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://junedream.com/2014/05/17/入手rmbp/" data-id="iv0rfaszkntozv61" class="article-share-link">Share</a>
+      <a data-url="http://junedream.com/2014/05/17/入手rmbp/" data-id="xp334xci996u0cgb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mac/">mac</a></li></ul>
@@ -245,7 +347,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/">mac</a><span class="tag-list-count">2</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/">mac</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac mysql/">mac mysql</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -254,7 +356,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/hexo/" style="font-size: 10.00px;">hexo</a><a href="/tags/mac/" style="font-size: 20.00px;">mac</a>
+      <a href="/tags/hexo/" style="font-size: 10.00px;">hexo</a><a href="/tags/mac/" style="font-size: 20.00px;">mac</a><a href="/tags/mac mysql/" style="font-size: 10.00px;">mac mysql</a>
     </div>
   </div>
 
@@ -263,7 +365,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05">五月 2014</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06">六月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05">五月 2014</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -273,6 +375,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2014/06/15/mac自启动服务/">mac自启动服务</a>
+          </li>
         
           <li>
             <a href="/2014/05/17/在github上安装hexo/">在github上安装hexo</a>

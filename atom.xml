@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Time flies when we're having fun​.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://junedream.com/"/>
-  <updated>2014-05-23T20:30:32.431Z</updated>
+  <updated>2014-06-15T12:05:48.398Z</updated>
   <id>http://junedream.com/</id>
   
   <author>
@@ -13,6 +13,83 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[mac自启动服务]]></title>
+    <link href="http://junedream.com/2014/06/15/mac%E8%87%AA%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1/"/>
+    <id>http://junedream.com/2014/06/15/mac自启动服务/</id>
+    <published>2014-06-15T11:47:24.000Z</published>
+    <updated>2014-06-15T12:04:21.000Z</updated>
+    <content type="html"><![CDATA[<p>关于mac下服务自启动, 可以在<code>/Library/LaunchDaemons</code>下添加对应的xml配置, 如mysql</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="code"><pre><span class="pi">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="doctype">&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;</span>
+<span class="tag">&lt;<span class="title">plist</span> <span class="attribute">version</span>=<span class="value">"1.0"</span>&gt;</span>
+<span class="tag">&lt;<span class="title">dict</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">key</span>&gt;</span>KeepAlive<span class="tag">&lt;/<span class="title">key</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">true</span>/&gt;</span>
+    <span class="tag">&lt;<span class="title">key</span>&gt;</span>Label<span class="tag">&lt;/<span class="title">key</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">string</span>&gt;</span>com.mysql.mysqld<span class="tag">&lt;/<span class="title">string</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">key</span>&gt;</span>Program<span class="tag">&lt;/<span class="title">key</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">string</span>&gt;</span>/usr/local/mysql/bin/mysqld_safe<span class="tag">&lt;/<span class="title">string</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">key</span>&gt;</span>RunAtLoad<span class="tag">&lt;/<span class="title">key</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">true</span>/&gt;</span>
+    <span class="tag">&lt;<span class="title">key</span>&gt;</span>UserName<span class="tag">&lt;/<span class="title">key</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">string</span>&gt;</span>mysql<span class="tag">&lt;/<span class="title">string</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">key</span>&gt;</span>WorkingDirectory<span class="tag">&lt;/<span class="title">key</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">string</span>&gt;</span>/usr/local/mysql<span class="tag">&lt;/<span class="title">string</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">dict</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">plist</span>&gt;</span>
+</pre></td></tr></table></figure>
+
+
+<p>然后在运行</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+</pre></td><td class="code"><pre>sudo mv ~/Desktop/<span class="keyword">com</span><span class="preprocessor">.mysql</span><span class="preprocessor">.mysqld</span><span class="preprocessor">.plist</span> /Library/LaunchDaemons
+sudo chown root /Library/LaunchDaemons/<span class="keyword">com</span><span class="preprocessor">.mysql</span><span class="preprocessor">.mysqld</span><span class="preprocessor">.plist</span>
+sudo launchctl load -w /Library/LaunchDaemons/<span class="keyword">com</span><span class="preprocessor">.mysql</span><span class="preprocessor">.mysqld</span><span class="preprocessor">.plist</span>
+</pre></td></tr></table></figure>
+
+
+<p>或者采用<code>/Library/LaunchAgents</code>下运行</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="keyword">cp</span> `brew --prefix mysql`/<span class="keyword">com</span><span class="preprocessor">.mysql</span><span class="preprocessor">.mysqld</span><span class="preprocessor">.plist</span> ~/Library/LaunchAgents/
+sudo launchctl load -w ~/Library/LaunchAgents/<span class="keyword">com</span><span class="preprocessor">.mysql</span><span class="preprocessor">.mysqld</span><span class="preprocessor">.plist</span>
+</pre></td></tr></table></figure>
+
+
+<p>最简单的方式就是通过<code>homebrew</code>查看, <code>brew info mysql</code>获得其自启动命令</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="built_in">ln</span> -sfv /usr/<span class="built_in">local</span>/opt/mysql<span class="comment">/*.plist ~/Library/LaunchAgents</span>
+</pre></td></tr></table></figure>
+
+
+]]></content>
+    
+    
+      <category term="mac mysql" scheme="http://junedream.com/tags/mac%20mysql/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[在github上安装hexo]]></title>
